@@ -29,12 +29,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # gem 'rack-cors'
 
 group :test do
-  gem 'figaro'
   gem 'rspec-rails'
   gem 'simplecov'
   gem 'factory_bot_rails'
   gem 'capybara'
   gem 'launchy'
+  gem 'faker'
 end
 
 group :development, :test do
@@ -43,6 +43,8 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'jsonapi-serializer'
   gem 'pry'
+  gem 'figaro'
+  gem 'faraday'
 end
 
 group :development do
