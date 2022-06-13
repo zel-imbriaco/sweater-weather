@@ -11,7 +11,7 @@ class BookSearchSerializer
         },
         "total_books_found": data["numFound"],
         "books": 
-          data[:docs].map do |book|
+          data[:docs].first(quantity.to_i).map do |book|
             {
               "isbn": book[:isbn],
               "title": book[:title],

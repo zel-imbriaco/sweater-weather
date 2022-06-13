@@ -25,6 +25,13 @@ RSpec.describe 'Book Search', type: :request do
 
     it 'returns the correct number of books' do
       expect(json["data"]["attributes"]["books"].count).to eq 2
+      get "/api/v1/book-search?location=Raleigh, NC&quantity=1"
+      expect(json["data"]["attributes"]["books"].count).to eq 1
+    end
+
+    it 'Gives each book all expected attributes' do
+      expected = "The Homeowner's Guide to Managing a Renovation"
+      expect(json["data"]["attributes"]["books"].first["title"]).to eq (expected)
     end
   end
 end
