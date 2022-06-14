@@ -233,6 +233,38 @@
           null
         ]
       },
+      "/Users/vaeliwen/sweater-weather/spec/services/weather_service_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/vaeliwen/sweater-weather/app/services/mapquest_service.rb": {
         "lines": [
           1,
@@ -249,8 +281,23 @@
           null,
           null
         ]
+      },
+      "/Users/vaeliwen/sweater-weather/app/services/weather_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1655220110
+    "timestamp": 1655224090
   }
 }
