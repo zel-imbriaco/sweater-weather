@@ -44,9 +44,9 @@ RSpec.describe 'Weather', type: :request do
           end
 
           it 'has all current weather attributes' do
-            expect(json["data"]["attributes"]["current_weather"]["datetime"]).to eq "2022-06-14T13:26:14-04:00"
-            expect(json["data"]["attributes"]["current_weather"]["sunrise"]).to eq "2022-06-14T05:42:15-04:00"
-            expect(json["data"]["attributes"]["current_weather"]["sunset"]).to eq "2022-06-14T20:34:36-04:00"
+            expect(json["data"]["attributes"]["current_weather"]["datetime"]).to eq "06-14-22 13:26"
+            expect(json["data"]["attributes"]["current_weather"]["sunrise"]).to eq "05:42:15 AM"
+            expect(json["data"]["attributes"]["current_weather"]["sunset"]).to eq "08:34:36 PM"
             expect(json["data"]["attributes"]["current_weather"]["temperature"]).to eq 74.1
             expect(json["data"]["attributes"]["current_weather"]["feels_like"]).to eq 74.97
             expect(json["data"]["attributes"]["current_weather"]["humidity"]).to eq 80
@@ -54,6 +54,12 @@ RSpec.describe 'Weather', type: :request do
             expect(json["data"]["attributes"]["current_weather"]["visibility"]).to eq 10000
             expect(json["data"]["attributes"]["current_weather"]["conditions"]).to eq "overcast clouds"
             expect(json["data"]["attributes"]["current_weather"]["icon"]).to eq "04d"
+          end
+
+          it 'has all daily weather attributes' do
+            expect(json["data"]["attributes"]["daily_weather"][0]["date"]).to eq "06/14/2022"
+            expect(json["data"]["attributes"]["daily_weather"][4]["date"]).to eq "06/18/2022"
+
           end
 
         end
