@@ -1,0 +1,525 @@
+{
+  "route": {
+      "hasTollRoad": false,
+      "hasBridge": true,
+      "boundingBox": {
+          "lr": {
+              "lng": -77.019913,
+              "lat": 35.780033
+          },
+          "ul": {
+              "lng": -78.64167,
+              "lat": 38.892071
+          }
+      },
+      "distance": 279.792,
+      "hasTimedRestriction": false,
+      "hasTunnel": true,
+      "hasHighway": true,
+      "computedWaypoints": [],
+      "routeError": {
+          "errorCode": -400,
+          "message": ""
+      },
+      "formattedTime": "04:17:59",
+      "sessionId": "62a915e7-0267-6750-02b4-34e5-0afe586b2863",
+      "hasAccessRestriction": false,
+      "realTime": 15273,
+      "hasSeasonalClosure": false,
+      "hasCountryCross": false,
+      "fuelUsed": 13.47,
+      "legs": [
+          {
+              "hasTollRoad": false,
+              "hasBridge": true,
+              "destNarrative": "Proceed to RALEIGH, NC.",
+              "distance": 279.792,
+              "hasTimedRestriction": false,
+              "hasTunnel": true,
+              "hasHighway": true,
+              "index": 0,
+              "formattedTime": "04:17:59",
+              "origIndex": -1,
+              "hasAccessRestriction": false,
+              "hasSeasonalClosure": false,
+              "hasCountryCross": false,
+              "roadGradeStrategy": [
+                  []
+              ],
+              "destIndex": 8,
+              "time": 15479,
+              "hasUnpaved": false,
+              "origNarrative": "",
+              "maneuvers": [
+                  {
+                      "distance": 0.219,
+                      "streets": [
+                          "Constitution Ave",
+                          "US-50 W",
+                          "US-1 S"
+                      ],
+                      "narrative": "Start out going west on Constitution Ave/US-50 W/US-1 S toward 7th St.",
+                      "turnType": 0,
+                      "startPoint": {
+                          "lng": -77.019913,
+                          "lat": 38.892063
+                      },
+                      "index": 0,
+                      "formattedTime": "00:00:36",
+                      "directionName": "West",
+                      "maneuverNotes": [],
+                      "linkIds": [],
+                      "signs": [
+                          {
+                              "extraText": "",
+                              "text": "50",
+                              "type": 2,
+                              "url": "http://icons.mqcdn.com/icons/rs2.png?n=50&d=WEST",
+                              "direction": 7
+                          },
+                          {
+                              "extraText": "",
+                              "text": "1",
+                              "type": 2,
+                              "url": "http://icons.mqcdn.com/icons/rs2.png?n=1&d=SOUTH",
+                              "direction": 4
+                          }
+                      ],
+                      "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Ff0qbh4zG8Ol7yiKpGUpmp4b0ereR6Cw&size=225,160&locations=38.89206314086914,-77.01991271972656|marker-1||38.89207077026367,-77.02397155761719|marker-2||&center=38.892066955566406,-77.02194213867188&defaultMarker=none&zoom=12&rand=1559702745&session=62a915e7-0267-6750-02b4-34e5-0afe586b2863",
+                      "transportMode": "AUTO",
+                      "attributes": 0,
+                      "time": 36,
+                      "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/icon-dirs-start_sm.gif",
+                      "direction": 7
+                  },
+                  {
+                      "distance": 0.587,
+                      "streets": [
+                          "9Th St"
+                      ],
+                      "narrative": "Turn left onto 9Th St.",
+                      "turnType": 6,
+                      "startPoint": {
+                          "lng": -77.023972,
+                          "lat": 38.892071
+                      },
+                      "index": 1,
+                      "formattedTime": "00:01:03",
+                      "directionName": "South",
+                      "maneuverNotes": [],
+                      "linkIds": [],
+                      "signs": [],
+                      "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Ff0qbh4zG8Ol7yiKpGUpmp4b0ereR6Cw&size=225,160&locations=38.89207077026367,-77.02397155761719|marker-2||38.88361358642578,-77.02400970458984|marker-3||&center=38.88784217834473,-77.02399063110352&defaultMarker=none&zoom=10&rand=1559702745&session=62a915e7-0267-6750-02b4-34e5-0afe586b2863",
+                      "transportMode": "AUTO",
+                      "attributes": 2048,
+                      "time": 63,
+                      "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_left_sm.gif",
+                      "direction": 4
+                  },
+                  {
+                      "distance": 10.765,
+                      "streets": [
+                          "I-395 S"
+                      ],
+                      "narrative": "Merge onto I-395 S toward Richmond (Crossing into Virginia).",
+                      "turnType": 10,
+                      "startPoint": {
+                          "lng": -77.02401,
+                          "lat": 38.883614
+                      },
+                      "index": 2,
+                      "formattedTime": "00:12:56",
+                      "directionName": "South",
+                      "maneuverNotes": [],
+                      "linkIds": [],
+                      "signs": [
+                          {
+                              "extraText": "",
+                              "text": "395",
+                              "type": 1,
+                              "url": "http://icons.mqcdn.com/icons/rs1.png?n=395&d=SOUTH",
+                              "direction": 4
+                          }
+                      ],
+                      "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Ff0qbh4zG8Ol7yiKpGUpmp4b0ereR6Cw&size=225,160&locations=38.88361358642578,-77.02400970458984|marker-3||38.7940788269043,-77.17279815673828|marker-4||&center=38.83884620666504,-77.09840393066406&defaultMarker=none&zoom=7&rand=1559702745&session=62a915e7-0267-6750-02b4-34e5-0afe586b2863",
+                      "transportMode": "AUTO",
+                      "attributes": 1152,
+                      "time": 776,
+                      "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_merge_right_sm.gif",
+                      "direction": 4
+                  },
+                  {
+                      "distance": 85.02,
+                      "streets": [
+                          "I-95 S"
+                      ],
+                      "narrative": "Merge onto I-95 S via EXIT 1A on the left toward Richmond.",
+                      "turnType": 11,
+                      "startPoint": {
+                          "lng": -77.172798,
+                          "lat": 38.794079
+                      },
+                      "index": 3,
+                      "formattedTime": "01:19:05",
+                      "directionName": "South",
+                      "maneuverNotes": [],
+                      "linkIds": [],
+                      "signs": [
+                          {
+                              "extraText": "",
+                              "text": "95",
+                              "type": 1,
+                              "url": "http://icons.mqcdn.com/icons/rs1.png?n=95&d=SOUTH",
+                              "direction": 4
+                          },
+                          {
+                              "extraText": "",
+                              "text": "1A",
+                              "type": 1001,
+                              "url": "http://icons.mqcdn.com/icons/rs1001.png?n=1A&d=LEFT",
+                              "direction": 0
+                          }
+                      ],
+                      "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Ff0qbh4zG8Ol7yiKpGUpmp4b0ereR6Cw&size=225,160&locations=38.7940788269043,-77.17279815673828|marker-4||37.67009353637695,-77.44833374023438|marker-5||&center=38.232086181640625,-77.31056594848633&defaultMarker=none&zoom=3&rand=1559702745&session=62a915e7-0267-6750-02b4-34e5-0afe586b2863",
+                      "transportMode": "AUTO",
+                      "attributes": 1152,
+                      "time": 4745,
+                      "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_merge_left_sm.gif",
+                      "direction": 4
+                  },
+                  {
+                      "distance": 43.284,
+                      "streets": [
+                          "I-295 S"
+                      ],
+                      "narrative": "Merge onto I-295 S via EXIT 84A on the left toward Richmond Int'l/Rocky Mount NC.",
+                      "turnType": 11,
+                      "startPoint": {
+                          "lng": -77.448334,
+                          "lat": 37.670094
+                      },
+                      "index": 4,
+                      "formattedTime": "00:38:28",
+                      "directionName": "South",
+                      "maneuverNotes": [],
+                      "linkIds": [],
+                      "signs": [
+                          {
+                              "extraText": "",
+                              "text": "295",
+                              "type": 1,
+                              "url": "http://icons.mqcdn.com/icons/rs1.png?n=295&d=SOUTH",
+                              "direction": 4
+                          },
+                          {
+                              "extraText": "",
+                              "text": "84A",
+                              "type": 1001,
+                              "url": "http://icons.mqcdn.com/icons/rs1001.png?n=84A&d=LEFT",
+                              "direction": 0
+                          }
+                      ],
+                      "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Ff0qbh4zG8Ol7yiKpGUpmp4b0ereR6Cw&size=225,160&locations=37.67009353637695,-77.44833374023438|marker-5||37.16686248779297,-77.34574127197266|marker-6||&center=37.41847801208496,-77.39703750610352&defaultMarker=none&zoom=4&rand=1559702745&session=62a915e7-0267-6750-02b4-34e5-0afe586b2863",
+                      "transportMode": "AUTO",
+                      "attributes": 1152,
+                      "time": 2308,
+                      "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_merge_left_sm.gif",
+                      "direction": 4
+                  },
+                  {
+                      "distance": 89.532,
+                      "streets": [
+                          "I-95 S"
+                      ],
+                      "narrative": "Merge onto I-95 S via the exit on the left toward Emporia/Rocky Mt NC (Crossing into North Carolina).",
+                      "turnType": 11,
+                      "startPoint": {
+                          "lng": -77.345741,
+                          "lat": 37.166862
+                      },
+                      "index": 5,
+                      "formattedTime": "01:17:46",
+                      "directionName": "South",
+                      "maneuverNotes": [],
+                      "linkIds": [],
+                      "signs": [
+                          {
+                              "extraText": "",
+                              "text": "95",
+                              "type": 1,
+                              "url": "http://icons.mqcdn.com/icons/rs1.png?n=95&d=SOUTH",
+                              "direction": 4
+                          }
+                      ],
+                      "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Ff0qbh4zG8Ol7yiKpGUpmp4b0ereR6Cw&size=225,160&locations=37.16686248779297,-77.34574127197266|marker-6||35.990623474121094,-77.87393951416016|marker-7||&center=36.57874298095703,-77.6098403930664&defaultMarker=none&zoom=3&rand=1559702745&session=62a915e7-0267-6750-02b4-34e5-0afe586b2863",
+                      "transportMode": "AUTO",
+                      "attributes": 1152,
+                      "time": 4666,
+                      "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_merge_left_sm.gif",
+                      "direction": 4
+                  },
+                  {
+                      "distance": 45.083,
+                      "streets": [
+                          "US-64 W"
+                      ],
+                      "narrative": "Merge onto US-64 W via EXIT 138 toward Raleigh/Nashville/Nash Community College.",
+                      "turnType": 10,
+                      "startPoint": {
+                          "lng": -77.87394,
+                          "lat": 35.990623
+                      },
+                      "index": 6,
+                      "formattedTime": "00:39:36",
+                      "directionName": "West",
+                      "maneuverNotes": [],
+                      "linkIds": [],
+                      "signs": [
+                          {
+                              "extraText": "",
+                              "text": "64",
+                              "type": 2,
+                              "url": "http://icons.mqcdn.com/icons/rs2.png?n=64&d=WEST",
+                              "direction": 7
+                          },
+                          {
+                              "extraText": "",
+                              "text": "138",
+                              "type": 1001,
+                              "url": "http://icons.mqcdn.com/icons/rs1001.png?n=138&d=RIGHT",
+                              "direction": 0
+                          }
+                      ],
+                      "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Ff0qbh4zG8Ol7yiKpGUpmp4b0ereR6Cw&size=225,160&locations=35.990623474121094,-77.87393951416016|marker-7||35.780826568603516,-78.56925201416016|marker-8||&center=35.885725021362305,-78.22159576416016&defaultMarker=none&zoom=5&rand=1559702745&session=62a915e7-0267-6750-02b4-34e5-0afe586b2863",
+                      "transportMode": "AUTO",
+                      "attributes": 1152,
+                      "time": 2376,
+                      "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_merge_right_sm.gif",
+                      "direction": 7
+                  },
+                  {
+                      "distance": 1.242,
+                      "streets": [
+                          "I-440 W"
+                      ],
+                      "narrative": "Merge onto I-440 W via EXIT 3 toward Wake Forest/US-1.",
+                      "turnType": 10,
+                      "startPoint": {
+                          "lng": -78.569252,
+                          "lat": 35.780827
+                      },
+                      "index": 7,
+                      "formattedTime": "00:01:24",
+                      "directionName": "West",
+                      "maneuverNotes": [],
+                      "linkIds": [],
+                      "signs": [
+                          {
+                              "extraText": "",
+                              "text": "440",
+                              "type": 1,
+                              "url": "http://icons.mqcdn.com/icons/rs1.png?n=440&d=WEST",
+                              "direction": 7
+                          },
+                          {
+                              "extraText": "",
+                              "text": "3",
+                              "type": 1001,
+                              "url": "http://icons.mqcdn.com/icons/rs1001.png?n=3&d=RIGHT",
+                              "direction": 0
+                          }
+                      ],
+                      "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Ff0qbh4zG8Ol7yiKpGUpmp4b0ereR6Cw&size=225,160&locations=35.780826568603516,-78.56925201416016|marker-8||35.79446029663086,-78.58253479003906|marker-9||&center=35.78764343261719,-78.57589340209961&defaultMarker=none&zoom=9&rand=1559702745&session=62a915e7-0267-6750-02b4-34e5-0afe586b2863",
+                      "transportMode": "AUTO",
+                      "attributes": 1152,
+                      "time": 84,
+                      "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_merge_right_sm.gif",
+                      "direction": 7
+                  },
+                  {
+                      "distance": 2.824,
+                      "streets": [
+                          "New Bern Ave"
+                      ],
+                      "narrative": "Merge onto New Bern Ave via EXIT 13A toward Downtown.",
+                      "turnType": 10,
+                      "startPoint": {
+                          "lng": -78.582535,
+                          "lat": 35.79446
+                      },
+                      "index": 8,
+                      "formattedTime": "00:04:32",
+                      "directionName": "West",
+                      "maneuverNotes": [],
+                      "linkIds": [],
+                      "signs": [
+                          {
+                              "extraText": "",
+                              "text": "13A",
+                              "type": 1001,
+                              "url": "http://icons.mqcdn.com/icons/rs1001.png?n=13A&d=RIGHT",
+                              "direction": 0
+                          }
+                      ],
+                      "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Ff0qbh4zG8Ol7yiKpGUpmp4b0ereR6Cw&size=225,160&locations=35.79446029663086,-78.58253479003906|marker-9||35.780033111572266,-78.61980438232422|marker-10||&center=35.78724670410156,-78.60116958618164&defaultMarker=none&zoom=9&rand=1559702745&session=62a915e7-0267-6750-02b4-34e5-0afe586b2863",
+                      "transportMode": "AUTO",
+                      "attributes": 1024,
+                      "time": 272,
+                      "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_merge_right_sm.gif",
+                      "direction": 7
+                  },
+                  {
+                      "distance": 1.236,
+                      "streets": [
+                          "E Edenton St"
+                      ],
+                      "narrative": "Turn slight right onto E Edenton St.",
+                      "turnType": 1,
+                      "startPoint": {
+                          "lng": -78.619804,
+                          "lat": 35.780033
+                      },
+                      "index": 9,
+                      "formattedTime": "00:02:33",
+                      "directionName": "West",
+                      "maneuverNotes": [],
+                      "linkIds": [],
+                      "signs": [],
+                      "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=Ff0qbh4zG8Ol7yiKpGUpmp4b0ereR6Cw&size=225,160&locations=35.780033111572266,-78.61980438232422|marker-10||35.78130340576172,-78.64167022705078|marker-11||&center=35.78066825866699,-78.6307373046875&defaultMarker=none&zoom=10&rand=1559702745&session=62a915e7-0267-6750-02b4-34e5-0afe586b2863",
+                      "transportMode": "AUTO",
+                      "attributes": 0,
+                      "time": 153,
+                      "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_slight_right_sm.gif",
+                      "direction": 7
+                  },
+                  {
+                      "distance": 0,
+                      "streets": [],
+                      "narrative": "Welcome to RALEIGH, NC.",
+                      "turnType": -1,
+                      "startPoint": {
+                          "lng": -78.64167,
+                          "lat": 35.781303
+                      },
+                      "index": 10,
+                      "formattedTime": "00:00:00",
+                      "directionName": "",
+                      "maneuverNotes": [],
+                      "linkIds": [],
+                      "signs": [],
+                      "transportMode": "AUTO",
+                      "attributes": 0,
+                      "time": 0,
+                      "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/icon-dirs-end_sm.gif",
+                      "direction": 0
+                  }
+              ],
+              "hasFerry": false
+          }
+      ],
+      "options": {
+          "arteryWeights": [],
+          "cyclingRoadFactor": 1,
+          "timeType": 0,
+          "useTraffic": false,
+          "returnLinkDirections": false,
+          "countryBoundaryDisplay": true,
+          "enhancedNarrative": false,
+          "locale": "en_US",
+          "tryAvoidLinkIds": [],
+          "drivingStyle": 2,
+          "doReverseGeocode": true,
+          "generalize": -1,
+          "mustAvoidLinkIds": [],
+          "sideOfStreetDisplay": true,
+          "routeType": "FASTEST",
+          "avoidTimedConditions": false,
+          "routeNumber": 0,
+          "shapeFormat": "raw",
+          "maxWalkingDistance": -1,
+          "destinationManeuverDisplay": true,
+          "transferPenalty": -1,
+          "narrativeType": "text",
+          "walkingSpeed": -1,
+          "urbanAvoidFactor": -1,
+          "stateBoundaryDisplay": true,
+          "unit": "M",
+          "highwayEfficiency": 22,
+          "maxLinkId": 0,
+          "maneuverPenalty": -1,
+          "avoidTripIds": [],
+          "filterZoneFactor": -1,
+          "manmaps": "true"
+      },
+      "locations": [
+          {
+              "dragPoint": false,
+              "displayLatLng": {
+                  "lng": -77.019913,
+                  "lat": 38.892063
+              },
+              "adminArea4": "District of Columbia",
+              "adminArea5": "Washington",
+              "postalCode": "",
+              "adminArea1": "US",
+              "adminArea3": "DC",
+              "type": "s",
+              "sideOfStreet": "N",
+              "geocodeQualityCode": "A5XAX",
+              "adminArea4Type": "County",
+              "linkId": 19982461,
+              "street": "",
+              "adminArea5Type": "City",
+              "geocodeQuality": "CITY",
+              "adminArea1Type": "Country",
+              "adminArea3Type": "State",
+              "latLng": {
+                  "lng": -77.019912,
+                  "lat": 38.892062
+              }
+          },
+          {
+              "dragPoint": false,
+              "displayLatLng": {
+                  "lng": -78.64167,
+                  "lat": 35.781296
+              },
+              "adminArea4": "Wake County",
+              "adminArea5": "Raleigh",
+              "postalCode": "",
+              "adminArea1": "US",
+              "adminArea3": "NC",
+              "type": "s",
+              "sideOfStreet": "N",
+              "geocodeQualityCode": "A5XAX",
+              "adminArea4Type": "County",
+              "linkId": 56969523,
+              "street": "",
+              "adminArea5Type": "City",
+              "geocodeQuality": "CITY",
+              "adminArea1Type": "Country",
+              "adminArea3Type": "State",
+              "latLng": {
+                  "lng": -78.64167,
+                  "lat": 35.781295
+              }
+          }
+      ],
+      "time": 15479,
+      "hasUnpaved": false,
+      "locationSequence": [
+          0,
+          1
+      ],
+      "hasFerry": false
+  },
+  "info": {
+      "statuscode": 0,
+      "copyright": {
+          "imageAltText": "© 2022 MapQuest, Inc.",
+          "imageUrl": "http://api.mqcdn.com/res/mqlogo.gif",
+          "text": "© 2022 MapQuest, Inc."
+      },
+      "messages": []
+  }
+}
