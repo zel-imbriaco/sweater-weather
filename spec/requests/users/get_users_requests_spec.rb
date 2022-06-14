@@ -19,7 +19,8 @@ RSpec.describe 'Users', type: :request do
       end
 
       it 'Adds the newly created user to the database' do
-        
+        expect(User.find(1)[:email]).to eq "fuzzy@duck.com"
+      end
     end
   end
 end
