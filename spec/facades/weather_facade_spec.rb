@@ -1,7 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'OpenWeather API Service' do
-  it 'Retrieves all required data from requested lat + lon pair for current day and 5-day forecast' do
+RSpec.describe 'Weather Facade' do
+
+  it '.weather_forecast(lat, lon) returns current and daily weather forecasts' do
     lat_lng = {lat: 38.892062, lng: -77.019912}
     response = File.read('./spec/fixtures/weather_in_dc.json')
     stub_request(:get, "https://api.openweathermap.org/data/3.0/onecall?lat=#{lat_lng[:lat]}&lon=#{lat_lng[:lng]}&exclude=minutely,hourly,alerts&units=imperial&appid=#{ENV['openweather_api_key']}").
@@ -13,9 +14,7 @@ RSpec.describe 'OpenWeather API Service' do
         }).
       to_return(status: 200, body: response, headers: {})
 
-      
-  
-    result = WeatherService.get_weather_for_location(lat_lng[:lat], lat_lng[:lng])
+    result = WeatherFacade.weather_forecast(lat_lng[:lat], lat_lng[:lng])
 
     expect(result[:current][:dt]).to eq 1655223649
     expect(result[:current][:sunrise]).to eq 1655199735
@@ -36,5 +35,5 @@ RSpec.describe 'OpenWeather API Service' do
     expect(result[:daily][0][:weather][0][:description]).to eq "light rain"
     expect(result[:daily][0][:weather][0][:icon]).to eq "10d"
   end
+
 end
-    
