@@ -1,0 +1,44 @@
+{
+  "coord": {
+      "lon": -77.0199,
+      "lat": 38.8921
+  },
+  "weather": [
+      {
+          "id": 802,
+          "main": "Clouds",
+          "description": "scattered clouds",
+          "icon": "03d"
+      }
+  ],
+  "base": "stations",
+  "main": {
+      "temp": 298.24,
+      "feels_like": 299,
+      "temp_min": 294.85,
+      "temp_max": 300.08,
+      "pressure": 1011,
+      "humidity": 84
+  },
+  "visibility": 10000,
+  "wind": {
+      "speed": 2.24,
+      "deg": 38,
+      "gust": 3.13
+  },
+  "clouds": {
+      "all": 40
+  },
+  "dt": 1655215058,
+  "sys": {
+      "type": 2,
+      "id": 2002287,
+      "country": "US",
+      "sunrise": 1655199735,
+      "sunset": 1655253276
+  },
+  "timezone": -14400,
+  "id": 4140963,
+  "name": "Washington D.C.",
+  "cod": 200
+}
