@@ -6,11 +6,9 @@ RSpec.describe 'Users', type: :request do
     describe 'user registration' do
       before do
         post '/api/v1/users', params: {
-          "payload": {
           email: "fuzzy@duck.com",
           password: "DuckyFuzz1",
           password_confirmation: "DuckyFuzz1"
-          }
         }
 
       end
