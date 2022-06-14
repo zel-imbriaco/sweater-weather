@@ -245,12 +245,16 @@
           2,
           2,
           null,
+          null,
           null
         ]
       },
       "/Users/vaeliwen/sweater-weather/app/models/user.rb": {
         "lines": [
           1,
+          1,
+          1,
+          null,
           1,
           null
         ]
@@ -262,7 +266,7 @@
           null
         ]
       },
-      "/Users/vaeliwen/sweater-weather/spec/requests/users/get_users_requests_spec.rb": {
+      "/Users/vaeliwen/sweater-weather/spec/requests/users/users_requests_spec.rb": {
         "lines": [
           1,
           null,
@@ -272,6 +276,7 @@
           1,
           1,
           2,
+          null,
           null,
           null,
           null,
@@ -514,14 +519,27 @@
       "/Users/vaeliwen/sweater-weather/app/controllers/api/v1/users_controller.rb": {
         "lines": [
           1,
+          1,
           null,
           1,
+          2,
+          2,
           null,
           null
         ]
       },
       "/Users/vaeliwen/sweater-weather/app/controllers/application_controller.rb": {
         "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/vaeliwen/sweater-weather/app/serializers/user_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
           1,
           null
         ]
@@ -591,6 +609,6 @@
         ]
       }
     },
-    "timestamp": 1655237248
+    "timestamp": 1655239614
   }
 }

@@ -6,12 +6,13 @@ RSpec.describe 'Users', type: :request do
     describe 'user registration' do
       before do
         post '/api/v1/users', params: {
-          payload: {
+          "payload": {
           email: "fuzzy@duck.com",
           password: "DuckyFuzz1",
           password_confirmation: "DuckyFuzz1"
           }
         }
+
       end
 
       it 'Returns 201 response on successful user registration' do
@@ -19,7 +20,7 @@ RSpec.describe 'Users', type: :request do
       end
 
       it 'Adds the newly created user to the database' do
-        expect(User.find(1)[:email]).to eq "fuzzy@duck.com"
+        expect(User.find_by(email: "fuzzy@duck.com")).to be_instance_of User
       end
     end
   end

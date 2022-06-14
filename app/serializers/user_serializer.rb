@@ -1,4 +1,4 @@
-def UsersSerializer
+class UserSerializer
   include JSONAPI::Serializer
   set_type :users
   set_id :id
