@@ -48,7 +48,6 @@ RSpec.describe 'Weather', type: :request do
             expect(json["data"]["attributes"]["daily_weather"]).to exist
           end
 
-
         end
 
       end
