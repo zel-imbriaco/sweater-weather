@@ -1,6 +1,6 @@
 class MapquestService
   def self.get_lat_lng(location)
-    response = conn.get("address?key=#{ENV['mapquest_api_key']}&location=#{location}")
+    response = conn.get("address?key=#{ENV['mapquest_api_key']}&location=#{location}&maxResults=1")
 
     JSON.parse(response.body, symbolize_names: true)[:results][0][:locations][0][:latLng]
   end

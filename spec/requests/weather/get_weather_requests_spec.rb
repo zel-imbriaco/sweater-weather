@@ -5,6 +5,17 @@ RSpec.describe 'Weather', type: :request do
     describe '/api/v1/forecast' do
 
       before do
+        lat_lng = {lat: 38.892062, lng: -77.019912}
+        stub_request(:get, "https://api.openweathermap.org/data/3.0/onecall?lat=#{lat_lng[:lat]}&lon=#{lat_lng[:lng]}&exclude=minutely,hourly,alerts&units=imperial&appid=#{ENV['openweather_api_key']}").
+        with(
+          headers: {
+            'Accept'=>'*/*',
+            'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+            'User-Agent'=>'Faraday v2.3.0'
+          }).
+        to_return(status: 200, body: response, headers: {})
+
+        
         get '/api/v1/forecast?location=washington,dc'
       end
 
@@ -22,10 +33,11 @@ RSpec.describe 'Weather', type: :request do
             expect(json["data"]["type"]).to eq 'forecast'
           end
 
-          it 'has daily weather and current weather json' do
+          it 'has daily weather and current weather attributes' do
             expect(json["data"]["attributes"]["current_weather"]).to exist
             expect(json["data"]["attributes"]["daily_weather"]).to exist
           end
+
 
         end
 
