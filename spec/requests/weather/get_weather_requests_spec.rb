@@ -59,9 +59,30 @@ RSpec.describe 'Weather', type: :request do
           it 'has all daily weather attributes' do
             expect(json["data"]["attributes"]["daily_weather"][0]["date"]).to eq "06/14/2022"
             expect(json["data"]["attributes"]["daily_weather"][4]["date"]).to eq "06/18/2022"
-
+            expect(json["data"]["attributes"]["daily_weather"][0]["sunrise"]).to eq "Tue, 14 Jun 2022 05:42:15 AM"
+            expect(json["data"]["attributes"]["daily_weather"][4]["sunrise"]).to eq "Sat, 18 Jun 2022 05:42:29 AM"
+            expect(json["data"]["attributes"]["daily_weather"][0]["sunset"]).to eq "Tue, 14 Jun 2022 08:34:36 PM"
+            expect(json["data"]["attributes"]["daily_weather"][4]["sunset"]).to eq "Sat, 18 Jun 2022 08:35:59 PM"
+            expect(json["data"]["attributes"]["daily_weather"][0]["max_temp"]).to eq 78.37
+            expect(json["data"]["attributes"]["daily_weather"][4]["max_temp"]).to eq 78.1
+            expect(json["data"]["attributes"]["daily_weather"][0]["min_temp"]).to eq 69.37
+            expect(json["data"]["attributes"]["daily_weather"][4]["min_temp"]).to eq 63.37
+            expect(json["data"]["attributes"]["daily_weather"][0]["conditions"]).to eq "heavy intensity rain"
+            expect(json["data"]["attributes"]["daily_weather"][4]["conditions"]).to eq "clear sky"
+            expect(json["data"]["attributes"]["daily_weather"][0]["icon"]).to eq "10d"
+            expect(json["data"]["attributes"]["daily_weather"][4]["icon"]).to eq "01d"
           end
 
+          it 'has all hourly weather attributes' do
+            expect(json["data"]["attributes"]["hourly_weather"][0]["time"]).to eq "01:00:00 PM"
+            expect(json["data"]["attributes"]["hourly_weather"][7]["time"]).to eq "08:00:00 PM"
+            expect(json["data"]["attributes"]["hourly_weather"][0]["temperature"]).to eq 74.1
+            expect(json["data"]["attributes"]["hourly_weather"][7]["temperature"]).to eq 73.62
+            expect(json["data"]["attributes"]["hourly_weather"][0]["conditions"]).to eq "heavy intensity rain"
+            expect(json["data"]["attributes"]["hourly_weather"][7]["conditions"]).to eq "overcast clouds"
+            expect(json["data"]["attributes"]["hourly_weather"][0]["icon"]).to eq "10d"
+            expect(json["data"]["attributes"]["hourly_weather"][7]["icon"]).to eq "04d"
+          end
         end
 
       end

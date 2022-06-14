@@ -20,7 +20,21 @@ class ForecastSerializer
           },
           "daily_weather": weather[:daily].first(5).map do |daily|
             {
-              "date": "#{Time.at(daily[:dt]).strftime("%m/%d/%Y")}"
+              "date": "#{Time.at(daily[:dt]).strftime("%m/%d/%Y")}",
+              "sunrise": "#{Time.at(daily[:sunrise]).strftime("%a, %e %b %Y %I:%M:%S %p")}",
+              "sunset": "#{Time.at(daily[:sunset]).strftime("%a, %e %b %Y %I:%M:%S %p")}",
+              "max_temp": daily[:temp][:max],
+              "min_temp": daily[:temp][:min],
+              "conditions": daily[:weather][0][:description],
+              "icon": daily[:weather][0][:icon]
+            }
+          end,
+          "hourly_weather": weather[:hourly].first(8).map do |hourly|
+            {
+            "time": "#{Time.at(hourly[:dt]).strftime("%I:%M:%S %p")}",
+            "temperature": hourly[:temp],
+            "conditions": hourly[:weather][0][:description],
+            "icon": hourly[:weather][0][:icon]
             }
           end
         }
