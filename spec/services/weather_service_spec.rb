@@ -14,7 +14,10 @@ RSpec.describe 'OpenWeather API Service' do
       to_return(status: 200, body: response, headers: {})
   
     result = WeatherService.get_weather_for_location(lat_lng[:lat], lat_lng[:lng])
-    
+
+    expect(result[:current][:dt]).to eq 1655223649
+    expect(result[:current][:sunrise]).to eq 1655199735
+    expect(result[:current][:sunset]).to eq 1655253276
     expect(result[:current][:temp]).to eq 76.59
     expect(result[:current][:feels_like]).to eq 77.56
     expect(result[:current][:humidity]).to eq 77
@@ -23,6 +26,13 @@ RSpec.describe 'OpenWeather API Service' do
     expect(result[:current][:weather][0][:description]).to eq "overcast clouds"
     expect(result[:current][:weather][0][:icon]).to eq "04d"
     expect(result[:timezone]).to eq "America/New_York"
+    expect(result[:daily][0][:dt]).to eq 1655226000
+    expect(result[:daily][0][:sunrise]).to eq 1655199735
+    expect(result[:daily][0][:sunset]).to eq 1655253276
+    expect(result[:daily][0][:temp][:max]).to eq 78.19
+    expect(result[:daily][0][:temp][:min]).to eq 69.37
+    expect(result[:daily][0][:weather][0][:description]).to eq "light rain"
+    expect(result[:daily][0][:weather][0][:icon]).to eq "10d"
   end
 end
     
