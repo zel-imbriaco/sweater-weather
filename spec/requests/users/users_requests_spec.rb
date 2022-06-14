@@ -22,6 +22,12 @@ RSpec.describe 'Users', type: :request do
       it 'Adds the newly created user to the database' do
         expect(User.find_by(email: "fuzzy@duck.com")).to be_instance_of User
       end
+
+      it 'Returns all expected attributes in response body' do
+        expect(json["data"]["type"]).to eq "users"
+        expect(json["data"]["attributes"]["email"]).to eq "fuzzy@duck.com"
+        expect(json["data"]["attributes"]["api_key"]).to eq User.find_by(email: "fuzzy@duck.com")[:api_key]
+      end
     end
   end
 end
