@@ -2,7 +2,7 @@ class ForecastSerializer
 
   def self.full_forecast(weather)
     {
-      data: {
+      "data": {
         "id": nil,
         "type": "forecast",
         "attributes": {

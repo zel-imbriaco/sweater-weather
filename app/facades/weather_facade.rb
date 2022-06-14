@@ -4,6 +4,4 @@ class WeatherFacade
     WeatherService.get_weather_for_location(lat_lng[:lat], lat_lng[:lng])
   end
 
-  def self.valid_location?(location)
-  end
 end
