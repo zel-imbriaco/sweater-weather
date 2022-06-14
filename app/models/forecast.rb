@@ -1,2 +1,0 @@
-def Forecast
-end
