@@ -49,5 +49,4 @@ RSpec.describe 'Weather Facade' do
     expect(result[:hourly][0][:weather][0][:description]).to eq "heavy intensity rain"
     expect(result[:hourly][0][:weather][0][:icon]).to eq "10d"
   end
-
 end
