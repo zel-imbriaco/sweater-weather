@@ -4,7 +4,7 @@ RSpec.describe 'Weather Facade' do
 
   it '.weather_forecast(lat, lon) returns current and daily weather forecasts' do
     lat_lng = {lat: 38.892062, lng: -77.019912}
-    response = File.read('./spec/fixtures/weather_in_dc.json')
+    weather_response = File.read('./spec/fixtures/weather_in_dc.json')
     stub_request(:get, "https://api.openweathermap.org/data/3.0/onecall?lat=#{lat_lng[:lat]}&lon=#{lat_lng[:lng]}&exclude=minutely,hourly,alerts&units=imperial&appid=#{ENV['openweather_api_key']}").
       with(
         headers: {
@@ -12,9 +12,19 @@ RSpec.describe 'Weather Facade' do
           'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
           'User-Agent'=>'Faraday v2.3.0'
         }).
-      to_return(status: 200, body: response, headers: {})
+      to_return(status: 200, body: weather_response, headers: {})
 
-    result = WeatherFacade.weather_forecast(lat_lng[:lat], lat_lng[:lng])
+      geocache_response = File.read("./spec/fixtures/mapquest_dc.json")
+      stub_request(:get, "http://www.mapquestapi.com/geocoding/v1/address?key=#{ENV['mapquest_api_key']}&location=washington,dc&maxResults=1").
+      with(
+        headers: {
+       'Accept'=>'*/*',
+       'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       'User-Agent'=>'Faraday v2.3.0'
+        }).
+      to_return(status: 200, body: geocache_response, headers: {})
+
+    result = WeatherFacade.weather_forecast("washington,dc")
 
     expect(result[:current][:dt]).to eq 1655223649
     expect(result[:current][:sunrise]).to eq 1655199735
