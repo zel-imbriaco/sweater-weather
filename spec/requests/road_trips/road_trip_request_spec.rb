@@ -46,6 +46,13 @@ RSpec.describe "Road Trip Requests", type: :request do
         expect(json["data"]["attributes"]["weather_at_eta"]["conditions"]).to eq "overcast clouds"
       end
       
+      it 'Returns 401 response on failed authentication' do
+        post "/api/v1/road_trip", params: {
+          "origin": "Washington, DC",
+          "destination": "Raleigh, NC",
+          "api_key": "DuckyFuzz1"
+        }
+      end
     end
   end
 end

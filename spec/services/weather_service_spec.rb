@@ -58,6 +58,10 @@ RSpec.describe 'OpenWeather API Service' do
     expect(result[:temp]).to eq 72.16
     expect(result[:conditions]).to eq "overcast clouds"
 
+    result = WeatherService.get_weather_for_destination(lat_lng[:lat], lat_lng[:lng], 0)
+    expect(result[:temp]).to eq 74.1
+    expect(result[:conditions]).to eq "overcast clouds"
+
     result = WeatherService.get_weather_for_destination(lat_lng[:lat], lat_lng[:lng], 9)
     expect(result).to eq "We can't handle trips longer than 8 hours away for weather, sorry!"
   end
