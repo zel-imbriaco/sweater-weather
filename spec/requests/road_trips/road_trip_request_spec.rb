@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe "Road Trip Requests", type: :request do
   describe 'GET' do
-    describe '/api/v1/roadtrip' do
+    describe '/api/v1/road_trip' do
       before do
         User.create!(email: "fuzzy@duck.com", password: "DuckyFuzz1", password_confirmation: "DuckyFuzz1", api_key: "Dab")
-        get "/api/v1/roadtrip", params: {
+        post "/api/v1/road_trip", params: {
           "origin": "Washington, DC",
           "destination": "Raleigh, NC",
           "api_key": "Dab"
@@ -22,7 +22,8 @@ RSpec.describe "Road Trip Requests", type: :request do
         expect(response.body["data"]["attributes"]["start_city"]).to eq "Washington, DC"
         expect(response.body["data"]["attributes"]["end_city"]).to eq "Raleigh, NC"
         expect(response.body["data"]["attributes"]["travel_time"]).to eq "04:17:59"
-        expect(response.body["data"]["attributes"]["weather_at_eta"]["temperature"]).to eq 
+        expect(response.body["data"]["attributes"]["weather_at_eta"]["temperature"]).to eq 72.16
+        expect(response.body["data"]["attributes"]["weather_at_eta"]["conditions"]).to eq "overcast clouds"
       end
       
     end
