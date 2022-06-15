@@ -13,7 +13,11 @@ class MapquestService
     if json[:route][:routeError][:errorCode] == -400
       return {
         formatted_time: json[:route][:formattedTime],
-        seconds: json[:route][:time]
+        seconds: json[:route][:time],
+        lat_lng: {
+          lng: json[:route][:locations][1][:latLng][:lng],
+          lat: json[:route][:locations][1][:latLng][:lat]
+        }
       }
     else
       return json[:info]

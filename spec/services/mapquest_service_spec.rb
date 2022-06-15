@@ -33,6 +33,8 @@ RSpec.describe 'Mapquest API Service' do
 
     expect(result[:formatted_time]).to eq "04:17:59"
     expect(result[:seconds]).to eq 15479
+    expect(result[:lat_lng][:lng]).to eq -78.64167
+    expect(result[:lat_lng][:lat]).to eq 35.781295
     
 
     response = File.read("spec/fixtures/mapquest_dc_london.json")
