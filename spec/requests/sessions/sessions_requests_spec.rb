@@ -19,7 +19,7 @@ RSpec.describe 'session requests', type: :request do
     it 'Returns a 401 error if credentials do not authenticate' do
       post "/api/v1/sessions", params: {
         email: "ducky@fuzz.com",
-        password: "fuzzyDuck1"
+        password: "DuckyFuzz1"
       }
       expect(response).to have_http_status 401
 

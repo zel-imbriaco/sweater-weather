@@ -52,6 +52,29 @@ RSpec.describe "Road Trip Requests", type: :request do
           "destination": "Raleigh, NC",
           "api_key": "DuckyFuzz1"
         }
+
+        expect(response).to have_http_status 401
+      end
+
+      it 'Returns 40x response on failed route, with error json' do
+        map_response2 = File.read("spec/fixtures/mapquest_dc_london.json")
+        stub_request(:get, "http://www.mapquestapi.com/directions/v2/route?from=Washington, DC&to=London, England&key=#{ENV['mapquest_api_key']}").
+        with(
+          headers: {
+            'Accept'=>'*/*',
+            'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+            'User-Agent'=>'Faraday v2.3.0'
+          }).
+        to_return(status: 200, body: map_response2, headers: {})
+
+        post "/api/v1/road_trip", params: {
+          "origin": "Washington, DC",
+          "destination": "London, England",
+          "api_key": "Dab"
+        }
+
+        expect(response).to have_http_status 402
+        expect(json["messages"][0]).to eq "We are unable to route with the given locations."
       end
     end
   end

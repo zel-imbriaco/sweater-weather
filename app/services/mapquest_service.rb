@@ -9,7 +9,6 @@ class MapquestService
     response = conn.get("directions/v2/route?to=#{destination}&from=#{origin}&key=#{ENV['mapquest_api_key']}")
 
     json = JSON.parse(response.body, symbolize_names: true)
-
     if json[:route][:routeError][:errorCode] == -400
       return {
         formatted_time: json[:route][:formattedTime],
@@ -17,10 +16,13 @@ class MapquestService
         lat_lng: {
           lng: json[:route][:locations][1][:latLng][:lng],
           lat: json[:route][:locations][1][:latLng][:lat]
-        }
+        },
+        routeError: json[:info]
       }
     else
-      return json[:info]
+      return {
+        routeError: json[:info]
+      }
     end
   end
 
