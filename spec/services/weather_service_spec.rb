@@ -40,5 +40,26 @@ RSpec.describe 'OpenWeather API Service' do
     expect(result[:hourly][0][:weather][0][:description]).to eq "heavy intensity rain"
     expect(result[:hourly][0][:weather][0][:icon]).to eq "10d"
   end
+
+  it 'retrieves current temp and conditions for one location' do
+    lat_lng = {lat: 38.892062, lng: -77.019912}
+    response = File.read('./spec/fixtures/weather_in_dc.json')
+    stub_request(:get, "https://api.openweathermap.org/data/3.0/onecall?lat=#{lat_lng[:lat]}&lon=#{lat_lng[:lng]}&exclude=minutely,alerts&units=imperial&appid=#{ENV['openweather_api_key']}").
+      with(
+        headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent'=>'Faraday v2.3.0'
+        }).
+      to_return(status: 200, body: response, headers: {})
+
+    result = WeatherService.get_weather_for_destination(lat_lng[:lat], lat_lng[:lng], 4)
+
+    expect(result[:temp]).to eq 72.16
+    expect(result[:conditions]).to eq "overcast clouds"
+
+    result = WeatherService.get_weather_for_destination(lat_lng[:lat], lat_lng[:lng], 9)
+    expect(result).to eq "We can't handle trips longer than 8 hours away for weather, sorry!"
+  end
 end
     

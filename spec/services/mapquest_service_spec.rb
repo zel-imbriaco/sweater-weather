@@ -31,7 +31,9 @@ RSpec.describe 'Mapquest API Service' do
 
     result = MapquestService.roadtrip("Washington, DC", "Raleigh, NC")
 
-    expect(result).to eq "04:17:59"
+    expect(result[:formatted_time]).to eq "04:17:59"
+    expect(result[:seconds]).to eq 15479
+    
 
     response = File.read("spec/fixtures/mapquest_dc_london.json")
     stub_request(:get, "http://www.mapquestapi.com/directions/v2/route?from=Washington, DC&to=London, England&key=#{ENV['mapquest_api_key']}").

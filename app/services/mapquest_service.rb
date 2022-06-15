@@ -11,7 +11,10 @@ class MapquestService
     json = JSON.parse(response.body, symbolize_names: true)
 
     if json[:route][:routeError][:errorCode] == -400
-      return json[:route][:formattedTime]
+      return {
+        formatted_time: json[:route][:formattedTime],
+        seconds: json[:route][:time]
+      }
     else
       return json[:info]
     end
