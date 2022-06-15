@@ -5,6 +5,26 @@ RSpec.describe "Road Trip Requests", type: :request do
     describe '/api/v1/road_trip' do
       before do
         User.create!(email: "fuzzy@duck.com", password: "DuckyFuzz1", password_confirmation: "DuckyFuzz1", api_key: "Dab")
+        map_response = File.read("spec/fixtures/mapquest_roadtrip.json")
+        stub_request(:get, "http://www.mapquestapi.com/directions/v2/route?from=Washington, DC&to=Raleigh, NC&key=#{ENV['mapquest_api_key']}").
+          with(
+            headers: {
+              'Accept'=>'*/*',
+              'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+              'User-Agent'=>'Faraday v2.3.0'
+            }).
+          to_return(status: 200, body: map_response, headers: {})
+
+        weather_response = File.read('./spec/fixtures/weather_in_dc.json')
+        stub_request(:get, "https://api.openweathermap.org/data/3.0/onecall?appid=#{ENV['openweather_api_key']}&exclude=minutely,alerts&lat=35.781295&lon=-78.64167&units=imperial").
+          with(
+            headers: {
+              'Accept'=>'*/*',
+              'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+              'User-Agent'=>'Faraday v2.3.0'
+            }).
+        to_return(status: 200, body: weather_response, headers: {})
+        
         post "/api/v1/road_trip", params: {
           "origin": "Washington, DC",
           "destination": "Raleigh, NC",
@@ -17,13 +37,13 @@ RSpec.describe "Road Trip Requests", type: :request do
       end
 
       it 'returns all expected attributes' do
-        expect(response.body["data"]["type"]).to eq "roadtrip"
-        expect(response.body["data"]["id"]).to eq nil
-        expect(response.body["data"]["attributes"]["start_city"]).to eq "Washington, DC"
-        expect(response.body["data"]["attributes"]["end_city"]).to eq "Raleigh, NC"
-        expect(response.body["data"]["attributes"]["travel_time"]).to eq "04:17:59"
-        expect(response.body["data"]["attributes"]["weather_at_eta"]["temperature"]).to eq 72.16
-        expect(response.body["data"]["attributes"]["weather_at_eta"]["conditions"]).to eq "overcast clouds"
+        expect(json["data"]["type"]).to eq "roadtrip"
+        expect(json["data"]["id"]).to eq nil
+        expect(json["data"]["attributes"]["start_city"]).to eq "Washington, DC"
+        expect(json["data"]["attributes"]["end_city"]).to eq "Raleigh, NC"
+        expect(json["data"]["attributes"]["travel_time"]).to eq "04:17:59"
+        expect(json["data"]["attributes"]["weather_at_eta"]["temperature"]).to eq 72.16
+        expect(json["data"]["attributes"]["weather_at_eta"]["conditions"]).to eq "overcast clouds"
       end
       
     end
